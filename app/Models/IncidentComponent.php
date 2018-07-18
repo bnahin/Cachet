@@ -18,6 +18,21 @@ use Illuminate\Database\Eloquent\Model;
  * This is the incident component model class.
  *
  * @author James Brooks <james@alt-three.com>
+ * @property int $id
+ * @property int $incident_id
+ * @property int $component_id
+ * @property int $status_id
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
+ * @property-read \CachetHQ\Cachet\Models\Component $component
+ * @property-read \CachetHQ\Cachet\Models\Incident $incident
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\IncidentComponent whereComponentId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\IncidentComponent whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\IncidentComponent whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\IncidentComponent whereIncidentId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\IncidentComponent whereStatusId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\IncidentComponent whereUpdatedAt($value)
+ * @mixin \Eloquent
  */
 class IncidentComponent extends Model
 {

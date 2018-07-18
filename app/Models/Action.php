@@ -19,6 +19,24 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @author Graham Campbell <graham@alt-three.com>
  * @author James Brooks <james@alt-three.com>
+ * @property int $id
+ * @property string $class_name
+ * @property int $user_id
+ * @property string $username
+ * @property string $information
+ * @property string $description
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
+ * @property-read \CachetHQ\Cachet\Models\User $user
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Action whereClassName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Action whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Action whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Action whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Action whereInformation($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Action whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Action whereUserId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Action whereUsername($value)
+ * @mixin \Eloquent
  */
 class Action extends Model
 {

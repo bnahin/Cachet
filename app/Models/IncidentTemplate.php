@@ -15,6 +15,25 @@ use AltThree\Validator\ValidatingTrait;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
+/**
+ * CachetHQ\Cachet\Models\IncidentTemplate
+ *
+ * @property int $id
+ * @property string $name
+ * @property string $slug
+ * @property string $template
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
+ * @property string|null $deleted_at
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\IncidentTemplate whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\IncidentTemplate whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\IncidentTemplate whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\IncidentTemplate whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\IncidentTemplate whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\IncidentTemplate whereTemplate($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\IncidentTemplate whereUpdatedAt($value)
+ * @mixin \Eloquent
+ */
 class IncidentTemplate extends Model
 {
     use ValidatingTrait;

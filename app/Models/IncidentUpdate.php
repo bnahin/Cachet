@@ -21,6 +21,24 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  * This is the incident update class.
  *
  * @author James Brooks <james@alt-three.com>
+ * @property int $id
+ * @property int $incident_id
+ * @property int $status
+ * @property string $message
+ * @property int $user_id
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
+ * @property-read \CachetHQ\Cachet\Models\Incident $incident
+ * @property-read \CachetHQ\Cachet\Models\User $user
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\IncidentUpdate sort($column, $direction)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\IncidentUpdate whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\IncidentUpdate whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\IncidentUpdate whereIncidentId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\IncidentUpdate whereMessage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\IncidentUpdate whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\IncidentUpdate whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\IncidentUpdate whereUserId($value)
+ * @mixin \Eloquent
  */
 class IncidentUpdate extends Model implements HasPresenter
 {

@@ -20,6 +20,45 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\MessageBag;
 use McCool\LaravelAutoPresenter\HasPresenter;
 
+/**
+ * CachetHQ\Cachet\Models\Metric
+ *
+ * @property int $id
+ * @property string $name
+ * @property string $suffix
+ * @property string $description
+ * @property int $default_value
+ * @property int $calc_type
+ * @property bool $display_chart
+ * @property int $places
+ * @property int $default_view
+ * @property int $threshold
+ * @property int $order
+ * @property int $visible
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
+ * @property-read bool $should_display
+ * @property-read \Illuminate\Database\Eloquent\Collection|\CachetHQ\Cachet\Models\Meta[] $meta
+ * @property-read \Illuminate\Database\Eloquent\Collection|\CachetHQ\Cachet\Models\MetricPoint[] $points
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Metric displayable()
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Metric sort($column, $direction)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Metric visible()
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Metric whereCalcType($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Metric whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Metric whereDefaultValue($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Metric whereDefaultView($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Metric whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Metric whereDisplayChart($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Metric whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Metric whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Metric whereOrder($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Metric wherePlaces($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Metric whereSuffix($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Metric whereThreshold($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Metric whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Metric whereVisible($value)
+ * @mixin \Eloquent
+ */
 class Metric extends Model implements HasPresenter
 {
     use SortableTrait, ValidatingTrait;

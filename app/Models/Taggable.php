@@ -18,6 +18,21 @@ use Illuminate\Database\Eloquent\Model;
  * This is the taggable model class.
  *
  * @author James Brooks <james@alt-three.com>
+ * @property int $id
+ * @property int $tag_id
+ * @property string $taggable_type
+ * @property int $taggable_id
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
+ * @property-read \CachetHQ\Cachet\Models\Tag $tag
+ * @property-read \Illuminate\Database\Eloquent\Model|\Eloquent $taggable
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Taggable whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Taggable whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Taggable whereTagId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Taggable whereTaggableId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Taggable whereTaggableType($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Taggable whereUpdatedAt($value)
+ * @mixin \Eloquent
  */
 class Taggable extends Model
 {

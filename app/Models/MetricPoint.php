@@ -24,6 +24,21 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  * @author James Brooks <james@alt-three.com>
  * @author Joseph Cohen <joe@alt-three.com>
  * @author Graham Campbell <graham@alt-three.com>
+ * @property int $id
+ * @property int $metric_id
+ * @property float $value
+ * @property int $counter
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
+ * @property-read int $calculated_value
+ * @property-read \CachetHQ\Cachet\Models\Metric $metric
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\MetricPoint whereCounter($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\MetricPoint whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\MetricPoint whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\MetricPoint whereMetricId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\MetricPoint whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\MetricPoint whereValue($value)
+ * @mixin \Eloquent
  */
 class MetricPoint extends Model implements HasPresenter
 {

@@ -24,6 +24,36 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  * This is the user model.
  *
  * @author James Brooks <james@alt-three.com>
+ * @property int $id
+ * @property string $username
+ * @property string $password
+ * @property string|null $remember_token
+ * @property string $google_2fa_secret
+ * @property string $email
+ * @property string $api_key
+ * @property bool $active
+ * @property int $level
+ * @property bool $welcomed
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
+ * @property-read bool $has_two_factor
+ * @property-read bool $is_admin
+ * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\User active()
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\User admins()
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\User whereActive($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\User whereApiKey($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\User whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\User whereEmail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\User whereGoogle2faSecret($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\User whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\User whereLevel($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\User wherePassword($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\User whereRememberToken($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\User whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\User whereUsername($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\User whereWelcomed($value)
+ * @mixin \Eloquent
  */
 class User extends Authenticatable implements HasPresenter
 {

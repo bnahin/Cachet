@@ -1,0 +1,9 @@
+{
+    "Firewall - Palo Alto": "10.99.1.1",
+    "Website Server": "10.224.176.15",
+    "School Internet": "8.8.8.8",
+
+    "Aeries Student and Parent Portal": "https://elcaminoreal.asp.aeries.net/student/LoginParent.aspx?page=default.aspx",
+    "Aeries Teacher Portal": "https://elcaminoreal.asp.aeries.net/teacher/Login.aspx?page=default.aspx",
+    "Aeries Admin and Staff Portal": "https://elcaminoreal.asp.aeries.net/admin/Login.aspx?page=default.aspx"
+}

@@ -27,6 +27,50 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  * @author James Brooks <james@alt-three.com>
  * @author Joseph Cohen <joseph@alt-three.com>
  * @author Graham Campbell <graham@alt-three.com>
+ * @property int $id
+ * @property int $user_id
+ * @property int $component_id
+ * @property string $name
+ * @property int $status
+ * @property int $visible
+ * @property bool $stickied
+ * @property bool $notifications
+ * @property string $message
+ * @property \Carbon\Carbon $occurred_at
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
+ * @property \Carbon\Carbon $deleted_at
+ * @property-read \CachetHQ\Cachet\Models\Component $component
+ * @property-read bool $is_resolved
+ * @property-read \Illuminate\Database\Eloquent\Collection|\CachetHQ\Cachet\Models\Meta[] $meta
+ * @property-read \Illuminate\Database\Eloquent\Collection|\CachetHQ\Cachet\Models\Tag[] $tags
+ * @property-read \Illuminate\Database\Eloquent\Collection|\CachetHQ\Cachet\Models\IncidentUpdate[] $updates
+ * @property-read \CachetHQ\Cachet\Models\User|null $user
+ * @method static bool|null forceDelete()
+ * @method static \Illuminate\Database\Query\Builder|\CachetHQ\Cachet\Models\Incident onlyTrashed()
+ * @method static bool|null restore()
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Incident search($search = array())
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Incident sort($column, $direction)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Incident stickied()
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Incident visible()
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Incident whereComponentId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Incident whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Incident whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Incident whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Incident whereMessage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Incident whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Incident whereNotifications($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Incident whereOccurredAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Incident whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Incident whereStickied($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Incident whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Incident whereUserId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Incident whereVisible($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Incident withAllTags($tags)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Incident withAnyTags($tags)
+ * @method static \Illuminate\Database\Query\Builder|\CachetHQ\Cachet\Models\Incident withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|\CachetHQ\Cachet\Models\Incident withoutTrashed()
+ * @mixin \Eloquent
  */
 class Incident extends Model implements HasPresenter
 {

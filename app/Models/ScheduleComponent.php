@@ -14,6 +14,25 @@ namespace CachetHQ\Cachet\Models;
 use AltThree\Validator\ValidatingTrait;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * CachetHQ\Cachet\Models\ScheduleComponent
+ *
+ * @property int $id
+ * @property int $schedule_id
+ * @property int $component_id
+ * @property int $component_status
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
+ * @property-read \CachetHQ\Cachet\Models\Component $component
+ * @property-read \CachetHQ\Cachet\Models\Schedule $schedule
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\ScheduleComponent whereComponentId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\ScheduleComponent whereComponentStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\ScheduleComponent whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\ScheduleComponent whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\ScheduleComponent whereScheduleId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\ScheduleComponent whereUpdatedAt($value)
+ * @mixin \Eloquent
+ */
 class ScheduleComponent extends Model
 {
     use ValidatingTrait;

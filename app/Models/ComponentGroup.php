@@ -24,6 +24,27 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  * This is the component group model class.
  *
  * @author James Brooks <james@alt-three.com>
+ * @property int $id
+ * @property string $name
+ * @property int $order
+ * @property int $visible
+ * @property int $collapsed
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\CachetHQ\Cachet\Models\Component[] $components
+ * @property-read \Illuminate\Database\Eloquent\Collection|\CachetHQ\Cachet\Models\Incident[] $incidents
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\ComponentGroup search($search = array())
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\ComponentGroup sort($column, $direction)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\ComponentGroup used(\Illuminate\Support\Collection $usedComponentGroups)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\ComponentGroup visible()
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\ComponentGroup whereCollapsed($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\ComponentGroup whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\ComponentGroup whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\ComponentGroup whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\ComponentGroup whereOrder($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\ComponentGroup whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\ComponentGroup whereVisible($value)
+ * @mixin \Eloquent
  */
 class ComponentGroup extends Model implements HasPresenter
 {

@@ -15,6 +15,26 @@ use AltThree\Validator\ValidatingTrait;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * CachetHQ\Cachet\Models\Subscription
+ *
+ * @property int $id
+ * @property int $subscriber_id
+ * @property int $component_id
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
+ * @property-read \CachetHQ\Cachet\Models\Component $component
+ * @property-read \CachetHQ\Cachet\Models\Subscriber $subscriber
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Subscription forComponent($component_id)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Subscription forSubscriber($subscriber_id)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Subscription isVerifiedForComponent($component_id)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Subscription whereComponentId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Subscription whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Subscription whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Subscription whereSubscriberId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Subscription whereUpdatedAt($value)
+ * @mixin \Eloquent
+ */
 class Subscription extends Model
 {
     use ValidatingTrait;

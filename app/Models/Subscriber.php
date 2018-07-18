@@ -24,6 +24,32 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  * @author Joseph Cohen <joe@alt-three.com>
  * @author James Brooks <james@alt-three.com>
  * @author Graham Campbell <graham@alt-three.com>
+ * @property int $id
+ * @property string $email
+ * @property string $verify_code
+ * @property string $phone_number
+ * @property string $slack_webhook_url
+ * @property \Carbon\Carbon $verified_at
+ * @property bool $global
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
+ * @property-read bool $is_verified
+ * @property-read \Illuminate\Database\Eloquent\Collection|\CachetHQ\Cachet\Models\Meta[] $meta
+ * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
+ * @property-read \Illuminate\Database\Eloquent\Collection|\CachetHQ\Cachet\Models\Subscription[] $subscriptions
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Subscriber forComponent($component_id)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Subscriber isGlobal()
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Subscriber isVerified()
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Subscriber whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Subscriber whereEmail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Subscriber whereGlobal($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Subscriber whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Subscriber wherePhoneNumber($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Subscriber whereSlackWebhookUrl($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Subscriber whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Subscriber whereVerifiedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Subscriber whereVerifyCode($value)
+ * @mixin \Eloquent
  */
 class Subscriber extends Model implements HasPresenter
 {

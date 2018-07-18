@@ -25,6 +25,37 @@ use McCool\LaravelAutoPresenter\HasPresenter;
  * This is the schedule class.
  *
  * @author James Brooks <james@alt-three.com>
+ * @property int $id
+ * @property string $name
+ * @property string $message
+ * @property int $status
+ * @property \Carbon\Carbon $scheduled_at
+ * @property \Carbon\Carbon $completed_at
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
+ * @property string|null $deleted_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\CachetHQ\Cachet\Models\ScheduleComponent[] $components
+ * @property-read \Illuminate\Database\Eloquent\Collection|\CachetHQ\Cachet\Models\Meta[] $meta
+ * @method static bool|null forceDelete()
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Schedule futureSchedules()
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Schedule inProgress()
+ * @method static \Illuminate\Database\Query\Builder|\CachetHQ\Cachet\Models\Schedule onlyTrashed()
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Schedule pastSchedules()
+ * @method static bool|null restore()
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Schedule search($search = array())
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Schedule sort($column, $direction)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Schedule whereCompletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Schedule whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Schedule whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Schedule whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Schedule whereMessage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Schedule whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Schedule whereScheduledAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Schedule whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Schedule whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Query\Builder|\CachetHQ\Cachet\Models\Schedule withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|\CachetHQ\Cachet\Models\Schedule withoutTrashed()
+ * @mixin \Eloquent
  */
 class Schedule extends Model implements HasPresenter
 {

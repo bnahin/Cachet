@@ -21,6 +21,55 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use McCool\LaravelAutoPresenter\HasPresenter;
 
+/**
+ * CachetHQ\Cachet\Models\Component
+ *
+ * @property int $id
+ * @property string $name
+ * @property string $description
+ * @property string $link
+ * @property int $status
+ * @property int $order
+ * @property int $group_id
+ * @property bool $enabled
+ * @property \Illuminate\Database\Eloquent\Collection|\CachetHQ\Cachet\Models\Meta[] $meta
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
+ * @property \Carbon\Carbon $deleted_at
+ * @property-read \CachetHQ\Cachet\Models\ComponentGroup $group
+ * @property-read \Illuminate\Database\Eloquent\Collection|\CachetHQ\Cachet\Models\Incident[] $incidents
+ * @property-read \Illuminate\Database\Eloquent\Collection|\CachetHQ\Cachet\Models\Tag[] $tags
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Component authenticated($authenticated)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Component disabled()
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Component enabled()
+ * @method static bool|null forceDelete()
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Component grouped()
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Component notStatus($status)
+ * @method static \Illuminate\Database\Query\Builder|\CachetHQ\Cachet\Models\Component onlyTrashed()
+ * @method static bool|null restore()
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Component search($search = array())
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Component sort($column, $direction)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Component status($status)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Component ungrouped()
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Component whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Component whereDeletedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Component whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Component whereEnabled($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Component whereGroupId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Component whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Component whereLink($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Component whereMeta($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Component whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Component whereOrder($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Component whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Component whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Component withAllTags($tags)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Component withAnyTags($tags)
+ * @method static \Illuminate\Database\Query\Builder|\CachetHQ\Cachet\Models\Component withTrashed()
+ * @method static \Illuminate\Database\Query\Builder|\CachetHQ\Cachet\Models\Component withoutTrashed()
+ * @mixin \Eloquent
+ * @property-read \CachetHQ\Cachet\Models\EcrchsService $service
+ */
 class Component extends Model implements HasPresenter
 {
     use HasTags, SearchableTrait, SoftDeletes, SortableTrait, ValidatingTrait;
@@ -248,5 +297,9 @@ class Component extends Model implements HasPresenter
     public function getPresenterClass()
     {
         return ComponentPresenter::class;
+    }
+
+    public function service() {
+        return $this->hasOne(EcrchsService::class);
     }
 }

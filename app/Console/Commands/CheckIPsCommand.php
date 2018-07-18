@@ -6,7 +6,9 @@
 
 namespace CachetHQ\Cachet\Console\Commands;
 
+use CachetHQ\Cachet\Foundation\Common\Bnahin\EcrchsServices;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Storage;
 
 class CheckIPsCommand extends Command
 {
@@ -15,7 +17,8 @@ class CheckIPsCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'ecrchs:ipcheck';
+    protected $signature = 'ecrchs:ipcheck 
+    {--r|refresh : Refresh services table from the JSON file.}';
 
     /**
      * The console command description.
@@ -24,14 +27,22 @@ class CheckIPsCommand extends Command
      */
     protected $description = 'Check status of ECRCHS services.';
 
+    /*
+     * The ECRCHS Services instance.
+     * @var \CachetHQ\Cachet\Foundation\Common\Bnahin\EcrchsServices
+     */
+    protected $ecrchs;
+
     /**
      * Create a new command instance.
      *
-     * @return void
+     * @param \CachetHQ\Cachet\Foundation\Common\Bnahin\EcrchsServices $services
      */
-    public function __construct()
+
+    public function __construct(EcrchsServices $services)
     {
         parent::__construct();
+        $this->ecrchs = $services;
     }
 
     /**
@@ -41,19 +52,11 @@ class CheckIPsCommand extends Command
      */
     public function handle()
     {
-        /** Ping IPs */
-        if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
-            $option = 'n';
-        } else {
-            $option = 'c';
+        $this->line("");
+        if ($this->option('refresh')) {
+            $this->ecrchs->updateServicesTable($this);
         }
-        //
-        $ip = '1.1.1.1';
-        exec("ping -$option 3 $ip", $output, $status);
-        if (!$status) {
-            $this->line('Online');
-        } else {
-            $this->line('Offline');
-        }
+
+        return $this->ecrchs->checkAllServices($this);
     }
 }

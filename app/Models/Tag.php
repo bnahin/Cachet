@@ -14,6 +14,22 @@ namespace CachetHQ\Cachet\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
+/**
+ * CachetHQ\Cachet\Models\Tag
+ *
+ * @property int $id
+ * @property string $name
+ * @property string $slug
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\CachetHQ\Cachet\Models\Component[] $components
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Tag whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Tag whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Tag whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Tag whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Tag whereUpdatedAt($value)
+ * @mixin \Eloquent
+ */
 class Tag extends Model
 {
     /**

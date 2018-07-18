@@ -202,6 +202,8 @@ return [
         CachetHQ\Cachet\Foundation\Providers\RepositoryServiceProvider::class,
         CachetHQ\Cachet\Foundation\Providers\RouteServiceProvider::class,
 
+        /** Custom Service Providers */
+        CachetHQ\Cachet\Foundation\Providers\EcrchsServiceProvider::class
     ]),
 
     /*

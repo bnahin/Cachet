@@ -18,6 +18,22 @@ use Illuminate\Database\Eloquent\Model;
  * This is the meta model class.
  *
  * @author James Brooks <james@alt-three.com>
+ * @property int $id
+ * @property string $key
+ * @property array $value
+ * @property int $meta_id
+ * @property string $meta_type
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Model|\Eloquent $meta
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Meta whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Meta whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Meta whereKey($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Meta whereMetaId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Meta whereMetaType($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Meta whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\CachetHQ\Cachet\Models\Meta whereValue($value)
+ * @mixin \Eloquent
  */
 class Meta extends Model
 {
