@@ -137,16 +137,14 @@ class EcrchsServices extends Command
                     $service->component->update(['status' => 2]);
                     $service->saveOrFail();
 
-                    $this->componentStatusForEmail['down'][] = $service;
-
                     //Send Emails
                     Mail::to(User::all())->send(
-                        new ServiceStatusChange(collect([
+                        new ServiceStatusChange([
                             'name'        => $service->service_name,
                             'statusColor' => "red",
                             'status'      => "down",
-                            'prevTime'    => $prevTime,
-                        ])));
+                            'prevTime'    => new Carbon($prevTime),
+                        ]));
                 } else {
                     //Still down, determine status level
                     $diff = $service->downtime->diffInMinutes(Carbon::now());
